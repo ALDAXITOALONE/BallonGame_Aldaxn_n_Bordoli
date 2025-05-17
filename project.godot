@@ -14,6 +14,10 @@ config/name="BalloonGame"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Scripts/sprite_2d.gd"
+
 [display]
 
 window/size/viewport_width=320

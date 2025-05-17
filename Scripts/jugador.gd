@@ -9,6 +9,7 @@ var cuentaRegresiva = 3
 @onready var cuenta = $Tiempo
 @onready var perdedor = $CanvasLayer
 @onready var sprite = $Sprite2D
+@onready var tip = $CanvasLayer/Label2
 var puedeEmpezar = false
 var vida = 1
 var explotando = false
@@ -17,11 +18,22 @@ var yaArranco = false
 var spaceTimer = true
 
 func _ready():
+	var skin_actual = Global.skin
 	$Tiempo.text = str(cuentaRegresiva)
 	get_tree().paused = false
 	perdedor.visible = false
 	$CuentaRegresiva.start()
 	$Space.start()
+	if skin_actual != null:
+		sprite.texture = skin_actual
+	else:
+		sprite.texture = preload("res://Assets/ChatGPT Image 10 may 2025, 01_34_49 p.m..png")
+		skin_actual = sprite.texture
+	
+	if skin_actual != preload("res://Assets/ChatGPT Image 10 may 2025, 01_34_49 p.m..png"):
+		sprite.scale = Vector2(2.568, 2.63)
+	else: 
+		sprite.scale = Vector2(0.083, 0.085)
 
 func _physics_process(delta: float) -> void:
 	
@@ -78,21 +90,48 @@ func _on_cuenta_regresiva_timeout() -> void:
 func recibirDaño(daño):
 	vida = vida - daño 
 	if vida == 0:
+		var numero = randi_range(1,8)
 		ARRIBA = 0
 		sprite.visible = false
 		$perdedor.start()
 		$Muerte.play("muerte")
 		explotando = true
 		print("moriste")
-		$CanvasLayer/Label2.text = "TIP: evita los obstaculos \npara no EXPLOTAR💥💥"
+		match numero:
+			1:
+				tip.text = "TIP: evita los obstaculos \npara no EXPLOTAR💥💥"
+				tip.add_theme_font_size_override("font_size", 15)
+			2:
+				tip.text = "¿Sabias que no todos los globos flotan? \nLos globos comunes con aire normal no flotan. "
+				tip.add_theme_font_size_override("font_size", 13)
+			3:
+				tip.add_theme_font_size_override("font_size", 10)
+				tip.text = "El calor hace que el aire o helio dentro del globo se expanda. \nSi hay mucha presión interna, ¡pum! explotan."
+			4:
+				tip.add_theme_font_size_override("font_size", 10)
+				tip.text = "En ciencia, se usan globos meteorológicos que pueden \nascender más de 30 km en la atmósfera para estudiar el clima."
+			5:
+				tip.add_theme_font_size_override("font_size", 10)
+				tip.text = "Hay competiciones de arte con globos donde crean  \ndragones, vestidos, castillos y más, ¡solo con globos inflables!"
+			6:
+				tip.add_theme_font_size_override("font_size", 10)
+				tip.text = "El primer globo de goma fue inventado en 1824 por Michael \nFaraday, quien los usaba en experimentos científicos."
+			7:
+				tip.add_theme_font_size_override("font_size", 15)
+				tip.text = "Tip: Agarra helio para evitar \nquedarte sin aire"
+			8:
+				tip.add_theme_font_size_override("font_size", 15)
+				tip.text = "Este juego lo hizo Aldax y Bordoli a las 3AM."
+
 
 
 func agarrarObjeto():
 	ARRIBA = -300.0
 
 func _on_perdedor_timeout() -> void:
-		get_tree().paused = true
-		perdedor.visible = true
+	km.visible = false
+	perdedor.visible = true
+	perdedor.get_tree().paused = false
 
 
 func _on_aumento_velocidad_timeout() -> void:

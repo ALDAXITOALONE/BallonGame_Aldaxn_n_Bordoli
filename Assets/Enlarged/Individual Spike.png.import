@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djvl15qay7jcx"
-path="res://.godot/imported/Individual Spike.png-45551183fdd91829e6d09b8b84c47e67.ctex"
+path="res://.godot/imported/Individual Spike.png-bb56c096cf48f92836d3a1ee06bbe02f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spikes/Enlarged/Individual Spike.png"
-dest_files=["res://.godot/imported/Individual Spike.png-45551183fdd91829e6d09b8b84c47e67.ctex"]
+source_file="res://Assets/Enlarged/Individual Spike.png"
+dest_files=["res://.godot/imported/Individual Spike.png-bb56c096cf48f92836d3a1ee06bbe02f.ctex"]
 
 [params]
 

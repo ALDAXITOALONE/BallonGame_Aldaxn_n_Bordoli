@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://duvgklhlmsa1v"]
 
-[ext_resource type="Script" path="res://perdedor.gd" id="1_2xxdp"]
+[ext_resource type="Script" path="res://Scripts/perdedor.gd" id="1_2xxdp"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
@@ -47,11 +47,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="reiniciar" type="Button" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Reiniciar
 "
 
 [node name="salir" type="Button" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Salir"
 

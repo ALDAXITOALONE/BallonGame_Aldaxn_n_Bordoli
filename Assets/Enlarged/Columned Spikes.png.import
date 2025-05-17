@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqrh8v22610g4"
-path="res://.godot/imported/Columned Spikes.png-dcfae43a078984bb79a3788fe4986f4b.ctex"
+path="res://.godot/imported/Columned Spikes.png-5ec891d947b591b81b0cf067dd800ed8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spikes/Enlarged/Columned Spikes.png"
-dest_files=["res://.godot/imported/Columned Spikes.png-dcfae43a078984bb79a3788fe4986f4b.ctex"]
+source_file="res://Assets/Enlarged/Columned Spikes.png"
+dest_files=["res://.godot/imported/Columned Spikes.png-5ec891d947b591b81b0cf067dd800ed8.ctex"]
 
 [params]
 

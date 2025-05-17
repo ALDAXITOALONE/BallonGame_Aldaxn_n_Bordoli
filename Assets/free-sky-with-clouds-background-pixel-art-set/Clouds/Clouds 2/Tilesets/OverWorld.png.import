@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnnx5bavw0xwk"
-path="res://.godot/imported/OverWorld.png-1c7efec3fb5ae6fdf6063ac8263dd75c.ctex"
+path="res://.godot/imported/OverWorld.png-b86c94fca11d8ae1fd3d1443cb6c5aaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spikes/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/Tilesets/OverWorld.png"
-dest_files=["res://.godot/imported/OverWorld.png-1c7efec3fb5ae6fdf6063ac8263dd75c.ctex"]
+source_file="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/Tilesets/OverWorld.png"
+dest_files=["res://.godot/imported/OverWorld.png-b86c94fca11d8ae1fd3d1443cb6c5aaf.ctex"]
 
 [params]
 

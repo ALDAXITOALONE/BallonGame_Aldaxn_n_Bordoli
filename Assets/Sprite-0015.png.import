@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktjehbqk6dyp"
-path="res://.godot/imported/2.png-87dac451e68c96a624e43df8fa107da4.ctex"
+uid="uid://dq8w80dia2rr4"
+path="res://.godot/imported/Sprite-0015.png-100d9b10eae80556baa9e43883e3b8e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5/2.png"
-dest_files=["res://.godot/imported/2.png-87dac451e68c96a624e43df8fa107da4.ctex"]
+source_file="res://Assets/Sprite-0015.png"
+dest_files=["res://.godot/imported/Sprite-0015.png-100d9b10eae80556baa9e43883e3b8e8.ctex"]
 
 [params]
 

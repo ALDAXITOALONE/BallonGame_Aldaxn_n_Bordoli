@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddd2urpgxcmai"]
 
-[ext_resource type="Script" path="res://objeto.gd" id="1_1k3xg"]
-[ext_resource type="Texture2D" uid="uid://d3r6k6fwtd2lk" path="res://Spikes/ChatGPT Image 16 may 2025, 08_27_10 p.m..png" id="2_1w8kx"]
+[ext_resource type="Script" path="res://Scripts/objeto.gd" id="1_1k3xg"]
+[ext_resource type="Texture2D" uid="uid://d3r6k6fwtd2lk" path="res://Assets/ChatGPT Image 16 may 2025, 08_27_10 p.m..png" id="2_1w8kx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy5uy"]
 size = Vector2(17.5, 25)

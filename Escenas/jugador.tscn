@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://nohiebf2u1dx"]
 
-[ext_resource type="Script" path="res://jugador.gd" id="1_x5j5t"]
-[ext_resource type="Texture2D" uid="uid://2ywk6o70s3w8" path="res://Spikes/ChatGPT Image 10 may 2025, 01_34_49 p.m..png" id="2_duioa"]
-[ext_resource type="Texture2D" uid="uid://2d33vod41er8" path="res://Spikes/explosion0 (2).png" id="3_dq6kf"]
-[ext_resource type="PackedScene" uid="uid://duvgklhlmsa1v" path="res://perdedor.tscn" id="4_38n7y"]
+[ext_resource type="Script" path="res://Scripts/jugador.gd" id="1_x5j5t"]
+[ext_resource type="Texture2D" uid="uid://2ywk6o70s3w8" path="res://Assets/ChatGPT Image 10 may 2025, 01_34_49 p.m..png" id="2_duioa"]
+[ext_resource type="Texture2D" uid="uid://2d33vod41er8" path="res://Assets/explosion0 (2).png" id="3_dq6kf"]
+[ext_resource type="PackedScene" uid="uid://duvgklhlmsa1v" path="res://Escenas/perdedor.tscn" id="4_38n7y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6385t"]
 radius = 24.0
@@ -152,7 +152,7 @@ collision_mask = 3
 script = ExtResource("1_x5j5t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 2
+texture_filter = 1
 scale = Vector2(0.083, 0.085)
 texture = ExtResource("2_duioa")
 
@@ -198,6 +198,7 @@ theme_override_font_sizes/font_size = 20
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_38n7y")]
 visible = false
+script = null
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
@@ -205,14 +206,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -160.0
-offset_right = 57.0
-offset_bottom = -110.0
+offset_left = -155.0
+offset_top = -161.0
+offset_right = 154.0
+offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.752941, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 10
+text = "Hay competiciones de arte con globos donde crean  
+dragones, vestidos, castillos y más, ¡solo con globos inflables!\"
+"
+horizontal_alignment = 1
 
 [node name="perdedor" type="Timer" parent="."]
 wait_time = 3.0
@@ -225,9 +230,9 @@ autostart = true
 [node name="velocidad" type="CanvasLayer" parent="."]
 
 [node name="km" type="Label" parent="velocidad"]
-offset_left = 186.0
+offset_left = 165.0
 offset_top = 24.0
-offset_right = 226.0
+offset_right = 205.0
 offset_bottom = 47.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 

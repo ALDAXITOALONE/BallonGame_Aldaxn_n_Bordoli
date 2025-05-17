@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsgjpyuq2i3w2"
-path="res://.godot/imported/2.png-b4970f86731f48acd9edb73f7b905bb3.ctex"
+path="res://.godot/imported/2.png-f0179d75d7e75213b230fea4c92e480c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spikes/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3/2.png"
-dest_files=["res://.godot/imported/2.png-b4970f86731f48acd9edb73f7b905bb3.ctex"]
+source_file="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3/2.png"
+dest_files=["res://.godot/imported/2.png-f0179d75d7e75213b230fea4c92e480c.ctex"]
 
 [params]
 

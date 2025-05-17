@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvbmetiiixwrv"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_ihot3"]
-[ext_resource type="Texture2D" uid="uid://bxyre6mhu8fqu" path="res://Spikes/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png" id="1_sdw64"]
-[ext_resource type="Texture2D" uid="uid://cl1xhfxujvheb" path="res://Spikes/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/2.png" id="2_x3xla"]
-[ext_resource type="Texture2D" uid="uid://bhklupxuxqlpa" path="res://Spikes/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png" id="3_l10bu"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ihot3"]
+[ext_resource type="Texture2D" uid="uid://bxyre6mhu8fqu" path="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png" id="1_sdw64"]
+[ext_resource type="Texture2D" uid="uid://cl1xhfxujvheb" path="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/2.png" id="2_x3xla"]
+[ext_resource type="Texture2D" uid="uid://bhklupxuxqlpa" path="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png" id="3_l10bu"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -44,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Jugar" type="Button" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Jugar
@@ -90,4 +91,5 @@ scale = Vector2(0.555556, 0.648148)
 texture = ExtResource("3_l10bu")
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
