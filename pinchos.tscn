@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://puic6emtybl8"]
+
+[ext_resource type="Script" path="res://pinchos.gd" id="1_sbcwo"]
+[ext_resource type="Texture2D" uid="uid://gnue70ppcqqk" path="res://Spikes/Enlarged/4 Conjoined Spikes.png" id="2_ymwfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxfyk"]
+size = Vector2(174.854, 73.3503)
+
+[node name="Pinchos" type="Area2D"]
+rotation = 0.00412804
+script = ExtResource("1_sbcwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.49791, -19.3285)
+shape = SubResource("RectangleShape2D_kxfyk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.30409, -22.314)
+scale = Vector2(1.05249, 2.23967)
+texture = ExtResource("2_ymwfy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

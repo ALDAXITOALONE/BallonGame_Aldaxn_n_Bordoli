@@ -1,0 +1,254 @@
+[gd_scene load_steps=10 format=3 uid="uid://nohiebf2u1dx"]
+
+[ext_resource type="Script" path="res://jugador.gd" id="1_x5j5t"]
+[ext_resource type="Texture2D" uid="uid://2ywk6o70s3w8" path="res://Spikes/ChatGPT Image 10 may 2025, 01_34_49 p.m..png" id="2_duioa"]
+[ext_resource type="Texture2D" uid="uid://2d33vod41er8" path="res://Spikes/explosion0 (2).png" id="3_dq6kf"]
+[ext_resource type="PackedScene" uid="uid://duvgklhlmsa1v" path="res://perdedor.tscn" id="4_38n7y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6385t"]
+radius = 24.0
+height = 58.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_357g5"]
+size = Vector2(24, 22)
+
+[sub_resource type="Animation" id="Animation_gm3nx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_dq6kf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4abeo"]
+resource_name = "muerte"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_dq6kf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.4, 0.566667, 0.733333, 0.866667, 1, 1.13333, 1.26667, 1.4, 1.53333, 1.7, 1.86667, 2.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l48aw"]
+_data = {
+"RESET": SubResource("Animation_gm3nx"),
+"muerte": SubResource("Animation_4abeo")
+}
+
+[node name="Jugador" type="CharacterBody2D" groups=["jugador"]]
+position = Vector2(163, 242)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_x5j5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+scale = Vector2(0.083, 0.085)
+texture = ExtResource("2_duioa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_6385t")
+one_way_collision_margin = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_357g5")
+
+[node name="Muerte" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l48aw")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2, -8)
+texture = ExtResource("3_dq6kf")
+hframes = 4
+vframes = 4
+
+[node name="CuentaRegresiva" type="Timer" parent="."]
+
+[node name="Tiempo" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -116.5
+offset_right = 0.5
+offset_bottom = -93.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_38n7y")]
+visible = false
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -160.0
+offset_right = 57.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.752941, 0, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="perdedor" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AumentoVelocidad" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="velocidad" type="CanvasLayer" parent="."]
+
+[node name="km" type="Label" parent="velocidad"]
+offset_left = 186.0
+offset_top = 24.0
+offset_right = 226.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 100.5
+offset_right = 121.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "¡Apreta SPACE para impulsarte!"
+horizontal_alignment = 1
+
+[node name="Space" type="Timer" parent="."]
+
+[connection signal="timeout" from="CuentaRegresiva" to="." method="_on_cuenta_regresiva_timeout"]
+[connection signal="timeout" from="perdedor" to="." method="_on_perdedor_timeout"]
+[connection signal="timeout" from="AumentoVelocidad" to="." method="_on_aumento_velocidad_timeout"]
+[connection signal="timeout" from="Space" to="." method="_on_space_timeout"]

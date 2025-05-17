@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddd2urpgxcmai"]
+
+[ext_resource type="Script" path="res://objeto.gd" id="1_1k3xg"]
+[ext_resource type="Texture2D" uid="uid://d3r6k6fwtd2lk" path="res://Spikes/ChatGPT Image 16 may 2025, 08_27_10 p.m..png" id="2_1w8kx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy5uy"]
+size = Vector2(17.5, 25)
+
+[node name="Objeto" type="Area2D"]
+script = ExtResource("1_1k3xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_1w8kx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0.5)
+shape = SubResource("RectangleShape2D_xy5uy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
