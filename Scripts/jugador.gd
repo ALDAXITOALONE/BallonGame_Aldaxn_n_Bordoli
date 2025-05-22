@@ -21,7 +21,6 @@ func _ready():
 	var skin_actual = Global.skin
 	$Tiempo.text = str(cuentaRegresiva)
 	get_tree().paused = false
-	perdedor.visible = false
 	$CuentaRegresiva.start()
 	$Space.start()
 	if skin_actual != null:
@@ -86,7 +85,6 @@ func _on_cuenta_regresiva_timeout() -> void:
 		$Label.visible = false
 		puedeEmpezar = true
 
-
 func recibirDaño(daño):
 	vida = vida - daño 
 	if vida == 0:
@@ -124,14 +122,13 @@ func recibirDaño(daño):
 				tip.text = "Este juego lo hizo Aldax y Bordoli a las 3AM."
 
 
-
 func agarrarObjeto():
 	ARRIBA = -300.0
+
 
 func _on_perdedor_timeout() -> void:
 	km.visible = false
 	perdedor.visible = true
-	perdedor.get_tree().paused = false
 
 
 func _on_aumento_velocidad_timeout() -> void:
@@ -142,6 +139,7 @@ func _on_aumento_velocidad_timeout() -> void:
 		elif  sprite.scale.x <= 0.01:
 			$perdedor.start(0.2)
 			$CanvasLayer/Label2.text = "TIP: si te haces muy chico PERDES"
+
 
 func agarrarHelio(valor):
 	sprite.scale += Vector2(valor, valor)

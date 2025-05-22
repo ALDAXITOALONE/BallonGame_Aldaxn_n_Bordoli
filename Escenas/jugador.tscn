@@ -196,20 +196,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 
-[node name="CanvasLayer" parent="." instance=ExtResource("4_38n7y")]
-visible = false
-script = null
-
-[node name="Label2" type="Label" parent="CanvasLayer"]
+[node name="Label2" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = -161.0
-offset_right = 154.0
-offset_bottom = -111.0
+offset_left = -158.0
+offset_top = -203.0
+offset_right = 151.0
+offset_bottom = -153.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.752941, 0, 1)
@@ -218,6 +214,9 @@ text = "Hay competiciones de arte con globos donde crean
 dragones, vestidos, castillos y más, ¡solo con globos inflables!\"
 "
 horizontal_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_38n7y")]
+layer = 4
 
 [node name="perdedor" type="Timer" parent="."]
 wait_time = 3.0
