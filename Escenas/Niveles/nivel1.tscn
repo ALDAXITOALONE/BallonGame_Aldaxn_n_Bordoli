@@ -106,7 +106,7 @@ rotation = 1.5711
 position = Vector2(614, 667)
 
 [node name="Objeto2" parent="." instance=ExtResource("7_jwm0d")]
-position = Vector2(404, 132)
+position = Vector2(403, 132)
 
 [node name="Objeto3" parent="." instance=ExtResource("7_jwm0d")]
 position = Vector2(503, -338)
@@ -135,8 +135,8 @@ motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(483.5, 655.75)
-scale = Vector2(1.12806, 1.53164)
+position = Vector2(301.5, 409.75)
+scale = Vector2(0.83702, 0.63164)
 texture = ExtResource("7_oncl5")
 
 [connection signal="area_entered" from="Area2D" to="Jugador" method="_on_area_2d_area_entered"]

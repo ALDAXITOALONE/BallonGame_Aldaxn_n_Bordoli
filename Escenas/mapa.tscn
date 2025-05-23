@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nohiebf2u1dx" path="res://Escenas/jugador.tscn" id="1_n4tuw"]
 [ext_resource type="Texture2D" uid="uid://bhklupxuxqlpa" path="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png" id="3_8nkps"]
 [ext_resource type="Script" path="res://Scripts/parallax_layer.gd" id="3_k043s"]
-[ext_resource type="Texture2D" uid="uid://bnnx5bavw0xwk" path="res://Assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/Tilesets/OverWorld.png" id="4_jqyvt"]
+[ext_resource type="Texture2D" uid="uid://bnnx5bavw0xwk" path="res://Assets/Tilesets/OverWorld.png" id="4_jqyvt"]
 [ext_resource type="PackedScene" uid="uid://puic6emtybl8" path="res://Escenas/pinchos.tscn" id="6_co3dq"]
 [ext_resource type="PackedScene" uid="uid://ddd2urpgxcmai" path="res://Escenas/objeto.tscn" id="7_xqv4n"]
 

@@ -17,6 +17,7 @@ var velocidad_mostrada = 0.0
 var yaArranco = false
 var spaceTimer = true
 
+
 func _ready():
 	var skin_actual = Global.skin
 	$Tiempo.text = str(cuentaRegresiva)
@@ -157,4 +158,10 @@ func _on_space_timeout() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	Global.nivel += 1
+	$EmpezasteNivel.text = "Pasate al nivel " + str(Global.nivel)
 	get_tree().change_scene_to_file("res://Escenas/Niveles/nivel1.tscn")
+
+
+func _on_chocado_timeout() -> void:
+	recibirDaño(1)
