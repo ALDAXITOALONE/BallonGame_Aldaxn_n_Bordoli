@@ -154,3 +154,7 @@ func _on_space_timeout() -> void:
 		$Label.visible = true
 		$Space.start(1)
 		spaceTimer = false
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://Escenas/Niveles/nivel1.tscn")
