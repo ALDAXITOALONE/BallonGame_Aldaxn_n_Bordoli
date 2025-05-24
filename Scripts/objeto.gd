@@ -5,10 +5,10 @@ var aumento
 
 func _ready() -> void:
 	if valor >= 1 and valor < 6:
-		aumento = 0.04
+		aumento = 0.035
 		sprite.texture = preload("res://Assets/ChatGPT Image 16 may 2025, 06_58_44 p.m..png")
-	elif valor > 6 and valor < 9:
-		aumento = 0.056
+	elif valor >= 6 and valor < 9:
+		aumento = 0.044
 		sprite.texture = preload("res://Assets/ChatGPT Image 16 may 2025, 08_03_45 p.m..png")
 	else:
 		sprite.texture = preload("res://Assets/ChatGPT Image 16 may 2025, 08_27_10 p.m..png")
@@ -19,4 +19,5 @@ func _on_body_entered(body: Node2D) -> void:
 			body.agarrarHelio(aumento)
 		else:
 			body.vida += 1
+			body.actualizarVida()
 	queue_free()

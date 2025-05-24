@@ -10,15 +10,26 @@ var cuentaRegresiva = 3
 @onready var perdedor = $CanvasLayer
 @onready var sprite = $Sprite2D
 @onready var tip = $CanvasLayer/Label2
+@onready var LabelVida = $velocidad/Vida 
+@onready var timerChocar = $Chocado
 var puedeEmpezar = false
 var vida = 1
 var explotando = false
 var velocidad_mostrada = 0.0
 var yaArranco = false
 var spaceTimer = true
-
+var escalaBase = Vector2(0,0)
+var skinDefualt = false
+var multiplicacion = 30
+var tamuerto
 
 func _ready():
+	tamuerto = false
+	if Global.nivel != 1:
+		vida = Global.vida
+	actualizarVida()
+	$EmpezasteNivel.visible = true
+	$EmpezasteNivel.text = "Estas en el nivel " + str(Global.nivel)
 	var skin_actual = Global.skin
 	$Tiempo.text = str(cuentaRegresiva)
 	get_tree().paused = false
@@ -31,12 +42,15 @@ func _ready():
 		skin_actual = sprite.texture
 	
 	if skin_actual != preload("res://Assets/ChatGPT Image 10 may 2025, 01_34_49 p.m..png"):
-		sprite.scale = Vector2(2.568, 2.63)
+		escalaBase = Vector2(2.568, 2.63)
+		skinDefualt = false
 	else: 
-		sprite.scale = Vector2(0.083, 0.085)
+		escalaBase = Vector2(0.083, 0.085)
+		skinDefualt = true
+	sprite.scale = escalaBase
 
 func _physics_process(delta: float) -> void:
-	
+	Global.vida = vida
 	if puedeEmpezar and !explotando:
 		velocity.y = ARRIBA
 		var direction := Input.get_axis("ui_left", "ui_right")
@@ -85,9 +99,11 @@ func _on_cuenta_regresiva_timeout() -> void:
 		$Space.stop()
 		$Label.visible = false
 		puedeEmpezar = true
+		$EmpezasteNivel.visible = false
 
 func recibirDaño(daño):
 	vida = vida - daño 
+	actualizarVida() 
 	if vida == 0:
 		var numero = randi_range(1,8)
 		ARRIBA = 0
@@ -95,7 +111,9 @@ func recibirDaño(daño):
 		$perdedor.start()
 		$Muerte.play("muerte")
 		explotando = true
+		$EmpezasteNivel.visible = false
 		print("moriste")
+		tamuerto = true
 		match numero:
 			1:
 				tip.text = "TIP: evita los obstaculos \npara no EXPLOTAR💥💥"
@@ -143,8 +161,11 @@ func _on_aumento_velocidad_timeout() -> void:
 
 
 func agarrarHelio(valor):
-	sprite.scale += Vector2(valor, valor)
-
+	if !skinDefualt:
+		valor = valor * multiplicacion
+		multiplicacion += 20
+	sprite.scale = escalaBase + Vector2(valor, valor)
+	
 
 func _on_space_timeout() -> void:
 	if spaceTimer:
@@ -159,9 +180,19 @@ func _on_space_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	Global.nivel += 1
-	$EmpezasteNivel.text = "Pasate al nivel " + str(Global.nivel)
-	get_tree().change_scene_to_file("res://Escenas/Niveles/nivel1.tscn")
-
+	print(Global.nivel)
+	var path = "res://Escenas/Niveles/nivel" + str(Global.nivel) + ".tscn"
+	if ResourceLoader.exists(path):
+		get_tree().change_scene_to_file(path)
+	else:
+		get_tree().change_scene_to_file("res://Escenas/Ganador.tscn")
 
 func _on_chocado_timeout() -> void:
 	recibirDaño(1)
+	if !tamuerto:
+		timerChocar.start(3)
+
+func actualizarVida():
+	LabelVida.text = " "
+	for i in range(vida):
+		LabelVida.text += "❤️"

@@ -7,7 +7,7 @@ func _process(delta: float) -> void:
 	$ParallaxBackground.scroll_offset.x += -100 * delta
 
 func _on_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escenas/mapa.tscn")
+	get_tree().change_scene_to_file("res://Escenas/Niveles/nivel1.tscn")
 	
 
 func _on_salir_pressed() -> void:
